@@ -1,118 +1,138 @@
-## Visualization Dashboard — README ##
-- Overview
+# mern-dashboard-visualization
+A complete MERN stack analytics dashboard that visualizes structured data using interactive D3.js charts, API-driven filters, and real-time KPIs.
 
+---
+
+## Visualization Dashboard — README ##
+
+### Overview
 This project is a full-stack Data Visualization Dashboard built using:
 
-- React (Vite) — Frontend
-- Node.js + Express — Backend API
-- MongoDB Atlas — Database
-- D3.js — Custom charts
-- Axios — API communication
+- **React (Vite)** — Frontend  
+- **Node.js + Express** — Backend API  
+- **MongoDB Atlas** — Database  
+- **D3.js** — Custom charts  
+- **Axios** — API communication  
 
 It visualizes insights from the dataset such as:
 
-1. Topic distribution
-2. Intensity by country
-3. Yearly trends
-4. Intensity vs likelihood scatter plot
-5. Filter-based record table
+1. Topic distribution  
+2. Intensity by country  
+3. Yearly trends  
+4. Intensity vs likelihood scatter plot  
+5. Filter-based record table  
 6. KPI summary (total records, avg intensity, top topic, top sector, etc.)
 
-##  Project Structure ##
+---
+
+## Project Structure
 /dashboard-app
-  ├── frontend/
-  │     ├── src/
-  │     │     ├── charts/
-  |     |          └── 
-  │     │     ├── components/
-  │     │     ├── services/
-  │     │     ├── App.jsx
-  │     │     ├── index.css
-  │     ├── vite.config.js
-  │     ├── package.json
-  │
-  ├── backend/
-  │     ├── models/
-  │     │     └── Record.js
-  │     ├──scripts/
-  │     │     └── clean_import.js
-  │     ├── server.js
-  │     ├── package.json
-  │     ├── .env
-  │
-  └── README.md
+├── frontend/
+│ ├── src/
+│ │ ├── charts/
+│ │ ├── components/
+│ │ ├── services/
+│ │ ├── App.jsx
+│ │ ├── index.css
+│ ├── vite.config.js
+│ ├── package.json
+│
+├── Backend/
+│ ├── models/
+│ │ └── Record.js
+│ ├── scripts/
+│ │ └── clean_import.js
+│ ├── server.js
+│ ├── package.json
+│ ├── .env (ignored by git)
+│
+└── README.md
 
-  ## Backend Setup ##
-   1. Install dependencies
-   * cd backend
-   * npm install
+---
 
-  2. Configure .env
-    - Create .env file inside backend folder:
-    MONGO=your_atlas_connection_string
-    FRONTEND_ORIGINS=http://localhost:5173
-    MAX_LIMIT=2000
+## Backend Setup
 
-  3. Import JSON data
-     node clean_import.js
+1. Install dependencies  
+cd Backend
+npm install
 
-  4. Start backend
-     npm start
 
-Backend runs on:
-http://localhost:5000
+2. Configure `.env`  
+Create `.env` inside **Backend** folder:
 
-   ## Frontend Setup ##
-   1. Install dependencies
-      cd frontend
-      npm install
+MONGO=your_atlas_connection_string
+FRONTEND_ORIGINS=http://localhost:5173
+MAX_LIMIT=2000
 
-   2. Start frontend
-      npm run dev
+3. Import JSON data  
+node scripts/clean_import.js
 
-Frontend runs on:
-http://localhost:5173
 
-## Features ##
-✔ KPI Summary
+4. Start backend  
+npm start
 
+Backend runs on:  
+**http://localhost:5000**
+
+---
+## Frontend Setup
+
+1. Install dependencies
+cd frontend
+npm install
+
+
+2. Start frontend  
+npm run dev
+
+
+Frontend runs on:  
+**http://localhost:5173**
+
+---
+
+## Features
+
+### ✔ KPI Summary  
 Shows:
-- Total records
-- Total countries
-- Average intensity
-- Top topic
-- Top sector
+- Total records  
+- Total countries  
+- Average intensity  
+- Top topic  
+- Top sector  
 
-✔ Filters
-- Filter by:
-- End year
-- Topic
-- Sector
-- Region
-- Pestle
-- Source
-- Published date
-- Country
-- Impact
+### ✔ Filters  
+Filter by:
+- End year  
+- Topic  
+- Sector  
+- Region  
+- Pestle  
+- Source  
+- Published date  
+- Country  
+- Impact  
 
 Filters update dashboard instantly.
 
-✔ Visualizations
-1. All charts built with D3.js:
-2. Bar chart — Topic distribution
-3. Horizontal bar — Intensity by country
-4. Line chart — Trends by year
-5. Scatter plot — Intensity vs likelihood
+### ✔ Visualizations (D3.js)
+1. Bar chart — Topic distribution  
+2. Horizontal bar — Intensity by country  
+3. Line chart — Trends by year  
+4. Scatter plot — Intensity vs likelihood  
 
-✔ Paginated Table
+### ✔ Paginated Table  
 Shows first 50 filtered records.
 
-## How to Run Full App ##
+---
 
-Start MongoDB Atlas
-Run backend → npm start
-Run frontend → npm run dev
+## How to Run Full App
 
-Open: http://localhost:5173
+1. Connect MongoDB Atlas  
+2. Start backend → `npm start`  
+3. Start frontend → `npm run dev`  
+
+Open in browser:  
+**http://localhost:5173**
 
 Everything loads automatically.
