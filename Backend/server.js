@@ -27,24 +27,7 @@ app.use(
 
 
 
-/* cors configuration */
-const rawOrigins = process.env.FRONTEND_ORIGINS || '';
-const allowedOrigins = rawOrigins.split(',').map(s => s.trim()).filter(Boolean);
- if(allowedOrigins.length == 0 )
- {
-    console.warn(' WARNING : FRONTEND-ORIGINS not set. Allowing All Origins (Development mode).');
-    app.use(cors());
- } else {
-    app.use( 
-        cors({
-            origin : function(origin, callback) {
-                if(!origin) return callback(null,true);
-                if(allowedOrigins.includes(origin)) return callback(null,true);
-                return callback(new Error(' CORS Blocked: Origin Not Allowed'));
-            },
-        })
-    );
- }
+
 
  /* connect to MongoDB atlas */
  const MONGO = process.env.MONGO;

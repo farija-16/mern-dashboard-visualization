@@ -19,7 +19,7 @@ export default function FilterPanel({ filters, setFilters }) {
   useEffect(() => {
     async function loadOptions() {
       try {
-        const res = await fetch("http://localhost:5000/api/filters/options");
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/filters/options`);
         const data = await res.json();
         setOptions(data);
       } catch (err) {
