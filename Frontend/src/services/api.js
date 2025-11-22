@@ -1,13 +1,15 @@
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 // axios instance:
 export const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: `${BASE_URL}/api`,
 });
 
 // ------- KPI SUMMARY -------
 export const fetchKPIs = (filters = {}) =>
-  api.get("/agg/kpis", { params: filters });
+  api.get("/agg/kpis", { params: filters })git;
 
 // ------- FULL DASHBOARD DATA -------
 export const fetchDashboard = async (filters = {}) => {
