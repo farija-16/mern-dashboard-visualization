@@ -9,7 +9,7 @@ export const api = axios.create({
 
 // ------- KPI SUMMARY -------
 export const fetchKPIs = (filters = {}) =>
-  api.get("/agg/kpis", { params: filters })git;
+  api.get("/agg/kpis", { params: filters });
 
 // ------- FULL DASHBOARD DATA -------
 export const fetchDashboard = async (filters = {}) => {
